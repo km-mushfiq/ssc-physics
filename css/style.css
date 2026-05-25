@@ -1,0 +1,557 @@
+/* =========================================
+   গ্লোবাল স্টাইলিং (Global Styles)
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --bg-color: #f4f7f6;
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* =========================================
+   ন্যাভিগেশন বার (Navbar)
+   ========================================= */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.logo span {
+    color: var(--secondary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: var(--secondary-color);
+}
+
+/* =========================================
+   পেজ কন্টেইনার (Page Container)
+   ========================================= */
+.page-content {
+    display: none; 
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.page-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   হোমপেজ স্টাইল (Home Page)
+   ========================================= */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #e0f2f1 0%, #bbdefb 100%);
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    color: var(--primary-color);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.chapter-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.chapter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: var(--secondary-color);
+}
+
+.chapter-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   গতিবিদ্যা চ্যাপ্টার স্টাইল (Mechanics Page)
+   ========================================= */
+.chapter-header {
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    color: var(--primary-color);
+    margin: 25px 0 10px 0;
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 10px;
+}
+
+/* স্থিতি ও গতি ভিজ্যুয়াল (Rest/Motion Card) */
+.concept-visual-card {
+    background-color: #f9fdfc;
+    border: 2px solid #e0f2f1;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.explanation-grid {
+    display: flex;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+.scenario-box {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.scenario-box.rest { border-left: 4px solid #3498db; }
+.scenario-box.motion { border-left: 4px solid #e74c3c; }
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.status-badge.static { background-color: #3498db; }
+.status-badge.moving { background-color: #e74c3c; }
+
+.conclusion-box {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 15px;
+}
+
+/* তুলনামূলক বক্স ও লিস্ট (Comparisons & Lists) */
+.comparison-box {
+    display: flex;
+    gap: 20px;
+    margin: 15px 0;
+}
+.comparison-box div {
+    flex: 1;
+    background: #fff;
+    padding: 15px;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.list-section {
+    margin: 15px 0 15px 20px;
+}
+.list-section li {
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   অ্যানিমেশন: গতির প্রকারভেদ (Motion Animations)
+   ========================================= */
+.motion-types-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 15px; 
+    margin: 20px 0; 
+}
+.motion-card { 
+    background: #fff; 
+    padding: 15px; 
+    border-radius: 8px; 
+    text-align: center; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+    border-top: 4px solid var(--secondary-color); 
+}
+.anim-box { 
+    height: 100px; 
+    background: #e0f2f1; 
+    margin-bottom: 15px; 
+    position: relative; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+/* রৈখিক গতি (Linear) */
+.obj-linear { 
+    width: 20px; 
+    height: 20px; 
+    background: #e74c3c; 
+    border-radius: 50%; 
+    position: absolute; 
+    left: 10px; 
+    animation: moveLinear 2s infinite alternate ease-in-out; 
+}
+@keyframes moveLinear { 0% { left: 10px; } 100% { left: calc(100% - 30px); } }
+
+/* ঘূর্ণন গতি (Circular) */
+.obj-circular-container { animation: spin 2.5s infinite linear; }
+.obj-circular { 
+    width: 20px; 
+    height: 20px; 
+    background: #3498db; 
+    border-radius: 50%; 
+    transform: translateY(-30px); 
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* দোলন গতি (Pendulum) */
+.pendulum { 
+    transform-origin: top center; 
+    animation: swing 1.5s infinite alternate ease-in-out; 
+    margin-top: -40px;
+}
+.string { 
+    width: 2px; 
+    height: 50px; 
+    background: #7f8c8d; 
+    margin: 0 auto; 
+}
+.bob { 
+    width: 24px; 
+    height: 24px; 
+    background: #f39c12; 
+    border-radius: 50%; 
+    margin: 0 auto; 
+}
+@keyframes swing { 0% { transform: rotate(35deg); } 100% { transform: rotate(-35deg); } }
+
+/* =========================================
+   সূত্রের বক্স (Formula Box)
+   ========================================= */
+.formula-card {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin: 15px 0;
+}
+
+/* নতুন গতির সমীকরণের স্টাইল */
+.math-steps-box {
+    background: #fff; 
+    border-left: 4px solid var(--secondary-color); 
+    padding: 15px 20px; 
+    margin-bottom: 20px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+    border-radius: 0 8px 8px 0;
+}
+
+.formula-card-new {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    background: #2c3e50; 
+    color: white; 
+    padding: 15px 20px; 
+    border-radius: 8px; 
+    margin-bottom: 12px; 
+    flex-wrap: wrap; 
+    gap: 10px;
+    transition: transform 0.2s;
+}
+
+.formula-card-new:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.eq-main { 
+    font-size: 22px; 
+    color: #f1c40f; 
+    font-weight: bold; 
+    letter-spacing: 1px; 
+    flex: 1; 
+    min-width: 150px; 
+}
+
+.eq-missing { 
+    flex: 1; 
+    text-align: center; 
+    min-width: 120px; 
+}
+
+.eq-missing .badge { 
+    background: #e74c3c; 
+    color: white; 
+    padding: 4px 12px; 
+    border-radius: 20px; 
+    font-size: 13px; 
+    font-weight: bold; 
+}
+
+.eq-example { 
+    flex: 2; 
+    font-size: 14px; 
+    color: #ecf0f1; 
+    min-width: 200px; 
+    border-left: 1px solid rgba(255,255,255,0.2); 
+    padding-left: 15px; 
+}
+
+/* =========================================
+   সিমুলেশন ল্যাব (Simulation Box)
+   ========================================= */
+.simulation-box {
+    background: #eee;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* স্ট্যাটাস প্যানেল যোগ করা হলো */
+.sim-stats {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat-item {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.stat-value {
+    color: var(--secondary-color);
+    font-size: 20px;
+}
+
+/* সুন্দর রাস্তা (Highway Track) */
+.track {
+    width: 100%;
+    height: 60px;
+    background: #7f8c8d;
+    position: relative;
+    margin: 20px 0;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+    border-bottom: 4px solid #576574;
+}
+
+/* রাস্তার মাঝখানের সাদা দাগ */
+.track::after {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: repeating-linear-gradient(90deg, #fff, #fff 20px, transparent 20px, transparent 40px);
+    z-index: 1;
+}
+
+/* নতুন মিনি গাড়ি (Mini Car) */
+.car {
+    width: 60px;
+    height: 35px;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    transition: left 0.1s linear;
+    z-index: 2; /* যেন রাস্তার সাদা দাগের উপরে থাকে */
+}
+
+.car-top {
+    position: absolute;
+    bottom: 15px;
+    left: 12px;
+    width: 36px;
+    height: 16px;
+    background: #e74c3c;
+    border-radius: 12px 12px 0 0;
+}
+
+/* গাড়ির জানালা */
+.car-top::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    width: 12px;
+    height: 10px;
+    background: #ecf0f1;
+    border-radius: 4px 0 0 0;
+}
+.car-top::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    width: 12px;
+    height: 10px;
+    background: #ecf0f1;
+    border-radius: 0 4px 0 0;
+}
+
+/* গাড়ির বডি */
+.car-body {
+    position: absolute;
+    bottom: 5px;
+    width: 60px;
+    height: 16px;
+    background: #c0392b;
+    border-radius: 8px 12px 4px 4px;
+}
+
+/* গাড়ির চাকা */
+.wheel {
+    position: absolute;
+    bottom: 0;
+    width: 16px;
+    height: 16px;
+    background: #2c3e50;
+    border-radius: 50%;
+    border: 2px solid #bdc3c7;
+    z-index: 3;
+    /* চাকা ঘোরার জন্য স্পোক */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wheel.back { left: 8px; }
+.wheel.front { right: 8px; }
+
+/* চাকার ভেতরের দাগ বা স্পোক */
+.wheel::before, .wheel::after {
+    content: '';
+    position: absolute;
+    background: #95a5a6;
+}
+.wheel::before { width: 100%; height: 2px; }
+.wheel::after { width: 2px; height: 100%; }
+
+/* বাতাসের রেখা (Speed/Wind Streaks) */
+.wind-streaks {
+    position: absolute;
+    right: 90%;
+    top: 40%;
+    width: 40px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s, width 0.2s;
+}
+.wind-streaks span {
+    display: block;
+    height: 2px;
+    background: #3498db;
+    margin-bottom: 4px;
+    border-radius: 2px;
+    animation: windBlow 0.4s infinite linear;
+}
+.wind-streaks span:nth-child(1) { width: 100%; animation-delay: 0s; }
+.wind-streaks span:nth-child(2) { width: 70%; animation-delay: 0.1s; transform: translateX(-10px); }
+.wind-streaks span:nth-child(3) { width: 50%; animation-delay: 0.2s; }
+
+@keyframes windBlow {
+    0% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(-30px); opacity: 0; }
+}
+
+button.btn {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+button.btn:hover { background: #2980b9; }
+
+/* =========================================
+   রেসপন্সিভ ডিজাইন (Responsive Media Query)
+   ========================================= */
+@media (max-width: 768px) {
+    .explanation-grid, .comparison-box { flex-direction: column; }
+    .eq-example { border-left: none; padding-left: 0; margin-top: 10px; } 
+    .formula-card-new { flex-direction: column; text-align: center; }
+    nav ul { gap: 10px; font-size: 14px; }
+}
