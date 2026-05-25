@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://km-mushfiq.github.io/ssc-physics/sitemap.xml
